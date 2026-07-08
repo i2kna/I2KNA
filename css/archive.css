@@ -1,0 +1,290 @@
+/* I2KNA Archive CSS */
+
+
+/* アーカイブタイトル */
+
+.archive-title {
+
+    margin-bottom: 25px;
+
+}
+
+
+.archive-title h1 {
+
+    margin: 0;
+
+    font-size: 34px;
+
+}
+
+
+
+/* 情報ボックス */
+
+.infobox {
+
+    float: left;
+
+    width: 280px;
+
+
+    margin-right: 25px;
+
+    margin-bottom: 30px;
+
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.15)
+    );
+
+
+    backdrop-filter: blur(3px);
+
+    -webkit-backdrop-filter: blur(3px);
+
+
+    border:
+
+        1px solid rgba(255,255,255,0.5);
+
+
+
+    border-radius: 10px;
+
+
+    padding: 15px;
+
+
+
+    color: white;
+
+
+    text-shadow:
+
+        0 1px 2px rgba(0,0,0,0.5);
+
+
+
+    box-shadow:
+
+        inset 0 5px 10px rgba(255,255,255,0.3),
+
+        0 5px 15px rgba(0,0,0,0.25);
+
+}
+
+
+
+.infobox-title {
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.infobox-row {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.infobox-label {
+
+    font-weight: bold;
+
+}
+
+
+
+/* Infoboxの回り込み解除 */
+
+.toc,
+.archive-section {
+
+    clear: both;
+
+}
+
+
+
+/* 本文セクション */
+
+.archive-section {
+
+
+    margin-bottom: 30px;
+
+
+}
+
+
+
+.archive-section h2 {
+
+
+    font-size: 24px;
+
+
+    margin-bottom: 10px;
+
+
+    padding-bottom: 5px;
+
+
+
+    border-bottom:
+
+        1px solid rgba(255,255,255,0.5);
+
+
+}
+
+
+
+.archive-section p {
+
+
+    line-height: 1.7;
+
+
+}
+
+
+
+/* 目次 */
+
+/* 目次 */
+
+.toc {
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.12)
+    );
+
+
+    backdrop-filter: blur(3px);
+
+    -webkit-backdrop-filter: blur(3px);
+
+
+    border:
+
+        1px solid rgba(255,255,255,0.5);
+
+
+
+    border-radius: 10px;
+
+
+
+    padding: 15px;
+
+
+
+    margin-bottom: 25px;
+
+
+
+    color: white;
+
+
+
+    text-shadow:
+
+        0 1px 2px rgba(0,0,0,0.5);
+
+
+
+    box-shadow:
+
+        inset 0 5px 10px rgba(255,255,255,0.35),
+
+        0 5px 15px rgba(0,0,0,0.25);
+
+}
+
+
+
+.toc-title {
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.toc a {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+
+
+.toc a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* 外部リンク */
+
+.external-links a {
+
+    color: #bff6ff;
+
+    text-decoration: none;
+
+}
+
+
+
+.external-links a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* 画像表示用 */
+
+.archive-image {
+
+
+    max-width: 100%;
+
+
+    border-radius: 8px;
+
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+
+    box-shadow:
+
+        0 5px 10px rgba(0,0,0,0.3);
+
+
+}

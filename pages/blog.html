@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Blog - Internet 2000s Nostalgia Archive
+</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../favicon.ico">
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<a href="../index.html">
+🌐 Internet 2000s Nostalgia Archive
+</a>
+
+</header>
+
+
+
+
+
+<div class="container">
+
+
+<aside class="sidebar" id="sidebar">
+
+</aside>
+
+
+
+
+
+
+<main class="content">
+
+
+
+<div class="panel">
+
+<h1>
+Blog
+</h1>
+
+<p>
+Personal posts, thoughts, and stories about the Internet 2000s Nostalgia Archive.
+</p>
+
+</div>
+
+
+
+<div class="panel blog-entry" data-id="2026-07-08-01">
+
+<h2>
+
+2026-07-08-01
+
+<span class="new-label"></span>
+
+</h2>
+
+<h3>
+Internet 2000s Nostalgia Archive
+</h3>
+
+<p>
+The first post introducing the I2KNA project and its future.
+</p>
+
+<a class="aero-button" href="../blog/2026-07-08-01.html">
+
+📖 Read Post
+
+</a>
+
+</div>
+
+
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+<script src="../js/sidebar.js"></script>
+
+
+<script>
+
+
+const entries =
+    document.querySelectorAll(".blog-entry");
+
+
+let newest = null;
+
+
+
+entries.forEach(entry => {
+
+
+    const id =
+        entry.dataset.id;
+
+
+
+    if(
+        newest === null ||
+        id > newest.dataset.id
+    ){
+
+        newest = entry;
+
+    }
+
+
+});
+
+
+
+if(newest){
+
+    newest
+    .querySelector(".new-label")
+    .textContent = "New!";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
