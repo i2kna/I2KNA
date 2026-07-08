@@ -478,3 +478,11 @@ body {
     box-shadow: 0 0 6px rgba(0, 140, 255, 0.4);
 
 }
+
+.secret-text {
+    color: transparent;
+}
+
+.secret-text::selection {
+    color: white;
+}
