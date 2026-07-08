@@ -19,7 +19,7 @@ else if(
 
 }
 
-console.log(depth + "components/sidebar.html");
+console.log("/I2KNA/components/sidebar.html");
 
 fetch(depth + "components/sidebar.html")
 
