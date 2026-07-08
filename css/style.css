@@ -482,6 +482,7 @@ body {
 .secret {
     color: transparent;
     user-select: text;
+    text-shadow: none;
 }
 
 .secret::selection {
