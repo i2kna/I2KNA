@@ -38,9 +38,10 @@ fetch(root + "components/sidebar.html")
 
 
 
-    // Current page
+    // 現在のページ
 
     let currentPath = location.pathname;
+
 
 
     // /I2KNA/ を /I2KNA/index.html として扱う
@@ -61,8 +62,20 @@ fetch(root + "components/sidebar.html")
     buttons.forEach(button => {
 
 
-        const link =
+        // リンク先取得
+
+        let link =
             new URL(button.href).pathname;
+
+
+
+        // /I2KNA/ を /I2KNA/index.html として扱う
+
+        if(link.endsWith("/")){
+
+            link += "index.html";
+
+        }
 
 
 
@@ -72,6 +85,8 @@ fetch(root + "components/sidebar.html")
 
 
 
+        // 完全一致
+
         if(link === currentPath){
 
             button.classList.add("active");
@@ -79,7 +94,8 @@ fetch(root + "components/sidebar.html")
         }
 
 
-        // category判定
+
+        // カテゴリ判定
 
         const category =
             button.dataset.category;
