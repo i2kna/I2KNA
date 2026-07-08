@@ -479,10 +479,11 @@ body {
 
 }
 
-.secret-text {
+.secret {
     color: transparent;
+    user-select: text;
 }
 
-.secret-text::selection {
+.secret::selection {
     color: white;
 }
