@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Internet 1995 Nostalgia Archive
+</title>
+
+<link rel="icon" href="../favicon.ico">
+
+
+<style>
+
+body {
+
+    margin: 0;
+    background: #008080;
+    font-family: "MS Sans Serif", "Microsoft Sans Serif", sans-serif;
+
+}
+
+
+.window {
+
+    width: 420px;
+    margin: 120px auto;
+    background: #c0c0c0;
+
+    border: 3px solid;
+    border-color: white black black white;
+
+    box-shadow: 3px 3px black;
+
+}
+
+
+.titlebar {
+
+    background: #000080;
+    color: white;
+
+    padding: 4px;
+
+    font-weight: bold;
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.close {
+
+    background: #c0c0c0;
+
+    color: black;
+
+    width: 22px;
+    height: 20px;
+
+    text-align: center;
+
+    border: 2px solid;
+    border-color: white black black white;
+
+    cursor: pointer;
+
+}
+
+
+.content {
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+
+.button {
+
+    padding: 5px 20px;
+
+    background: #c0c0c0;
+
+    border: 3px solid;
+    border-color: white black black white;
+
+    cursor: pointer;
+
+}
+
+
+.secret {
+
+    display: none;
+
+}
+
+
+.cookie {
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+
+.final {
+
+    display: none;
+
+    width: 300px;
+    height: 120px;
+
+    background: black;
+
+    color: white;
+
+    margin: 100px auto;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+.rainbow {
+
+    animation: rainbow 1s infinite linear;
+
+}
+
+
+@keyframes rainbow {
+
+    0% {color:red;}
+    20% {color:orange;}
+    40% {color:yellow;}
+    60% {color:lime;}
+    80% {color:cyan;}
+    100% {color:red;}
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="window" id="window">
+
+
+<div class="titlebar">
+
+Internet 1995 Nostalgia Archive
+
+<button class="close" onclick="closeWindow()">
+X
+</button>
+
+</div>
+
+
+<div class="content">
+
+<h2>
+Congratulations!
+</h2>
+
+
+<p>
+You found Egg Mk95!
+</p>
+
+
+<a href="/I2KNA/">
+<button class="button">
+Return to Homepage
+</button>
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="secret" id="secret">
+
+
+<div class="content">
+
+<button class="button" onclick="showCookie()">
+Really?
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="secret" id="cookieArea">
+
+
+<div class="content">
+
+<p>
+You found a super secret!<br>
+As a reward, here is a cookie!
+</p>
+
+
+<div class="cookie" onclick="cookieClick()">
+🍪
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="final" id="final">
+
+<div class="rainbow" id="rainbowText">
+Congratulations!<br>
+You found the Ultra Secret!<br>
+Show it off to everyone!
+</div>
+
+</div>
+
+
+
+<script>
+
+
+function closeWindow(){
+
+    document.getElementById("window").style.display="none";
+
+    document.getElementById("secret").style.display="block";
+
+}
+
+
+function showCookie(){
+
+    document.getElementById("secret").style.display="none";
+
+    document.getElementById("cookieArea").style.display="block";
+
+}
+
+
+
+let cookies = 0;
+
+
+function cookieClick(){
+
+    cookies++;
+
+    if(cookies >= 100){
+
+        document.getElementById("cookieArea").style.display="none";
+
+        const final =
+        document.getElementById("final");
+
+        final.style.display="flex";
+
+        moveDVD();
+
+    }
+
+}
+
+
+
+let x = 0;
+let y = 0;
+
+let dx = 2;
+let dy = 2;
+
+
+function moveDVD(){
+
+    const box =
+    document.getElementById("final");
+
+
+    setInterval(()=>{
+
+
+        x += dx;
+        y += dy;
+
+
+        if(
+            x + box.offsetWidth >= window.innerWidth ||
+            x <= 0
+        ){
+
+            dx *= -1;
+
+        }
+
+
+        if(
+            y + box.offsetHeight >= window.innerHeight ||
+            y <= 0
+        ){
+
+            dy *= -1;
+
+        }
+
+
+        box.style.position="fixed";
+        box.style.left=x+"px";
+        box.style.top=y+"px";
+
+
+    },16);
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
