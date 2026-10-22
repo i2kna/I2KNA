@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Administration | I2KNA</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+            background: #080e1b;
+            color: #e8eefb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background:
+                radial-gradient(ellipse at top, #172b4d 0%, transparent 60%),
+                #080e1b;
+        }
+
+        .panel {
+            width: 100%;
+            max-width: 440px;
+            padding: 32px;
+            border: 1px solid #293955;
+            border-radius: 20px;
+            background: rgb(15 25 43 / 94%);
+            box-shadow: 0 24px 80px rgb(0 0 0 / 30%);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+
+        .brand-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: #1d3d70;
+            color: #a8d3ff;
+            font-size: 24px;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: 0.04em;
+        }
+
+        .brand p {
+            margin: 4px 0 0;
+            color: #9aacc9;
+            font-size: 13px;
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            font-size: 21px;
+        }
+
+        .description {
+            margin: 0 0 24px;
+            color: #9aacc9;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #34445e;
+            border-radius: 10px;
+            outline: none;
+            background: #0a1323;
+            color: #fff;
+            font: inherit;
+        }
+
+        input:focus {
+            border-color: #65a9ff;
+            box-shadow: 0 0 0 3px rgb(101 169 255 / 15%);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 16px;
+            border: 0;
+            border-radius: 10px;
+            background: #3478e5;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4388f4;
+        }
+
+        button:disabled {
+            cursor: wait;
+            opacity: 0.6;
+        }
+
+        .secondary {
+            margin-top: 12px;
+            border: 1px solid #34445e;
+            background: #15233a;
+        }
+
+        .secondary:hover {
+            background: #20334f;
+        }
+
+        .status {
+            margin-top: 16px;
+            color: #c4d3eb;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .status:empty {
+            display: none;
+        }
+
+        .status.error {
+            color: #ff9d9d;
+        }
+
+        .status.success {
+            color: #8ee5b1;
+        }
+
+        .account {
+            margin: 20px 0;
+            padding: 16px;
+            border: 1px solid #34445e;
+            border-radius: 12px;
+            background: #0a1323;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .muted {
+            color: #9aacc9;
+            font-size: 13px;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        footer {
+            margin-top: 26px;
+            color: #71819c;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+    <script src="../js/admin.js" defer></script>
+</head>
+<body>
+    <main class="panel">
+        <header class="brand">
+            <div class="brand-icon" aria-hidden="true">◇</div>
+            <div>
+                <h1>I2KNA</h1>
+                <p>Administration</p>
+            </div>
+        </header>
+
+        <section id="login-view">
+            <h2>管理者ログイン</h2>
+            <p class="description">
+                管理者アカウントでログインしてください。
+            </p>
+
+            <form id="login-form">
+                <div class="field">
+                    <label for="username">ユーザー名</label>
+                    <input
+                        id="username"
+                        name="username"
+                        type="text"
+                        autocomplete="username"
+                        minlength="3"
+                        maxlength="32"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="password">パスワード</label>
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                        minlength="12"
+                        maxlength="128"
+                        required
+                    >
+                </div>
+
+                <button id="login-button" type="submit">
+                    ログイン
+                </button>
+            </form>
+        </section>
+
+        <section id="dashboard-view" hidden>
+            <h2>管理者ダッシュボード</h2>
+            <p class="description">
+                ログイン中の管理者アカウント
+            </p>
+
+            <div class="account">
+                <div>ユーザー名：<strong id="account-username"></strong></div>
+                <div>権限：<strong id="account-role"></strong></div>
+                <div class="muted">
+                    登録日時：<span id="account-created"></span>
+                </div>
+            </div>
+
+            <p class="description">
+                現在は認証機能の確認用画面です。
+                投稿管理やスタッフ管理はまだ実装されていません。
+            </p>
+
+            <button id="logout-button" type="button" class="secondary">
+                ログアウト
+            </button>
+        </section>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+
+        <footer>I2KNA · Authorized personnel only</footer>
+    </main>
+</body>
+</html>
